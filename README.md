@@ -17,5 +17,5 @@ drugs.standardize(["metoprolol", "Benadryl", "prinvil"])
 # Return generic names for matches greather than or equal to Jario-Winkler
 # similarity of 0.95.  This will be conservative, returning None for elements
 # that do not meet the cuttoff.
-drugs.standardze(["metoprolal"], thresh=0.95)
+drugs.standardize(["metoprolal"], thresh=0.95)
 ```

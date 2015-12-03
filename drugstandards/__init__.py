@@ -3,6 +3,7 @@ import operator
 import csv
 import pickle
 import os
+from pkg_resources import Requirement, resource_filename
 
 def create_drug_dicitonary(filename):
     """ This function creates a drug dictionary of the form
@@ -40,9 +41,9 @@ def standardize(druglist, drugdict=False, thresh=0.90):
         consistency to the FAERS reports.
     """
     if not drugdict:
-        this_dir, this_filename = os.path.split(__file__)
-        DATA_PATH = os.path.join(this_dir, "data", "synonyms.pkl")
-        drugdict = pickle.load(open(DATA_PATH, "rb")) 
+        filename = resource_filename(Requirement.parse("drugstandards"), "drugstandards/data/synonyms.dat")
+        print filename
+        drugdict = pickle.load(open(filename, "rb")) 
     standardized_druglist = []
     for drug in druglist:
         drug = drug.upper()
