@@ -15,6 +15,7 @@
 #### 2. Standardize a single, correctly spelled drugname to generic.
 ```
 # Note that this function is NOT case-sensitive.
+
 drugs.standardize(["lopressor"])
 ```
 #### 3. Standardize a single brand name to generic.
@@ -23,13 +24,26 @@ drugs.standardize(["Benadryl"])
 ```
 
 #### 4. Standardize misspelled names to generic.
+
 `drugs.standardize(["Benadril", "lopresor"])`
 
 #### 5. Return generic name for terms that have a Jario-Winkler similarity greater than 0.9
 ```
 # Will return None if no match is found.
+
 drugs.standardize(["Benadril"], thresh=0.9)
 ```
+
+#### 6. Add drug mapping to drug dictionary
+```
+# If a mapping does not exist you may create your own by updating the drug-dictionary.
+# For example, we may be interested in mappint the term "MULTI-VITAMIN" to "VITAMIN"
+
+drugs.add_drug_mapping({"MULTI-VITAMIN":"VITAMIN"})
+
+# We can also create many updates simultaneously
+
+drugs.add_drug_mapping({"MULTI-VITAMIN":"VITAMIN", "TYLENOL EXTRA STRENGTH": "ACETAMINOPHEN"})
 
 ## Questions/issues/contact
 mlbernauer@gmail.com
