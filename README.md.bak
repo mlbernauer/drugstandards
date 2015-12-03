@@ -3,7 +3,7 @@
 
 ## Installation
 
-#### 1. Install drugstandards package using PIP
+#### 1. Install drugstandards pacakge using PIP
 
 `sudo pip install drugstandards`
 
@@ -20,7 +20,7 @@ sudo python setup.py install
 
 `import drugstandards as drugs`
 
-#### 2. Standardize a single, correctly spelled drug name to generic.
+#### 2. Standardize a single, correctly spelled drugname to generic.
 ```
 # Note that this function is NOT case-sensitive.
 
@@ -45,7 +45,7 @@ drugs.standardize(["Benadril"], thresh=0.9)
 #### 6. Add drug mapping to drug dictionary
 ```
 # If a mapping does not exist you may create your own by updating the drug-dictionary.
-# For example, we may be interested in mapping the term "MULTI-VITAMIN" to "VITAMIN"
+# For example, we may be interested in mappint the term "MULTI-VITAMIN" to "VITAMIN"
 
 drugs.add_drug_mapping({"MULTI-VITAMIN":"VITAMIN"})
 
