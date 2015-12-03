@@ -52,6 +52,6 @@ drugs.add_drug_mapping({"MULTI-VITAMIN":"VITAMIN"})
 # We can also create many updates simultaneously
 
 drugs.add_drug_mapping({"MULTI-VITAMIN":"VITAMIN", "TYLENOL EXTRA STRENGTH": "ACETAMINOPHEN"})
-
+```
 ## Questions/issues/contact
 mlbernauer@gmail.com
