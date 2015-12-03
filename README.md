@@ -4,18 +4,32 @@
 ## Installation
 
 #### 1. Install drugstandards pacakge
-`sudo pip install git+git https://github.com/user/mlbernauer/drugstandards`
+
+`sudo pip install drugstandards`
 
 ## Usage
-```
-import drugstandards as drugs
+#### 1. Import the module
 
-# This function takes a list of drug names and converts it into a list
-# of generic names of equal length.
-drugs.standardize(["metoprolol", "Benadryl", "prinvil"])
+`import drugstandards as drugs`
 
-# Return generic names for matches greater than or equal to Jario-Winkler
-# similarity of 0.95.  This will be conservative, returning None for elements
-# that do not meet the cut-toff.
-drugs.standardize(["metoprolal"], thresh=0.95)
+#### 2. Standardize a single, correctly spelled drugname to generic.
 ```
+# Note that this function is NOT case-sensitive.
+drugs.standardize(["lopressor"])
+```
+#### 3. Standardize a single brand name to generic.
+```
+drugs.standardize(["Benadryl"])
+```
+
+#### 4. Standardize misspelled names to generic.
+`drugs.standardize(["Benadril", "lopresor"])`
+
+#### 5. Return generic name for terms that have a Jario-Winkler similarity greater than 0.9
+```
+# Will return None if no match is found.
+drugs.standardize(["Benadril"], thresh=0.9)
+```
+
+## Questions/issues/contact
+mlbernauer@gmail.com
