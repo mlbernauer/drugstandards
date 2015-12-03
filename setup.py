@@ -5,7 +5,7 @@ setup(name="drugstandards",
     include_package_data=True,
 
     package_data = {'':['*.dat']},
-    version="0.2",
+    version="0.3",
     description="Tools for standardizing drug names.",
     url="http://github.com/mlbernauer/drugstandards",
     author="Michael L. Bernauer",

@@ -42,7 +42,6 @@ def standardize(druglist, drugdict=False, thresh=0.90):
     """
     if not drugdict:
         filename = resource_filename(Requirement.parse("drugstandards"), "drugstandards/data/synonyms.dat")
-        print filename
         drugdict = pickle.load(open(filename, "rb")) 
     standardized_druglist = []
     for drug in druglist:
