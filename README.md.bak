@@ -14,8 +14,8 @@ import drugstandards as drugs
 # of generic names of equal length.
 drugs.standardize(["metoprolol", "Benadryl", "prinvil"])
 
-# Return generic names for matches greater than or equal to Jario-Winkler
+# Return generic names for matches greather than or equal to Jario-Winkler
 # similarity of 0.95.  This will be conservative, returning None for elements
-# that do not meet the cut-toff.
+# that do not meet the cuttoff.
 drugs.standardize(["metoprolal"], thresh=0.95)
 ```
