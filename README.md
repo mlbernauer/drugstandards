@@ -10,7 +10,6 @@
 #### 2. Installing drugstandards from source
 ```
 # Download this github repository and enter the following
-
 cd drugstandards
 sudo python setup.py install
 ```
@@ -23,7 +22,6 @@ sudo python setup.py install
 #### 2. Standardize a single, correctly spelled drug name to generic.
 ```
 # Note that this function is NOT case-sensitive.
-
 drugs.standardize(["lopressor"])
 ```
 #### 3. Standardize a single brand name to generic.
@@ -46,11 +44,9 @@ drugs.standardize(["Benadril"], thresh=0.9)
 ```
 # If a mapping does not exist you may create your own by updating the drug-dictionary.
 # For example, we may be interested in mapping the term "MULTI-VITAMIN" to "VITAMIN"
-
 drugs.add_drug_mapping({"MULTI-VITAMIN":"VITAMIN"})
 
 # We can also create many updates simultaneously
-
 drugs.add_drug_mapping({"MULTI-VITAMIN":"VITAMIN", "TYLENOL EXTRA STRENGTH": "ACETAMINOPHEN"})
 ```
 ## Questions/issues/contact

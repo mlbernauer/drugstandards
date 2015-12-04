@@ -13,8 +13,7 @@ def create_drug_dicitonary(filename):
     """ This function creates a drug dictionary of the form
         {"synonym1":"generic1", "synonym2":"generic1"} using
         drug names (brand, generic, synonyms) found in DrugBank.
-    """
-  
+    """ 
     f = csv.reader(open(filename, 'rb'), delimiter="\t")
     drug_dictionary = {}
   
@@ -52,7 +51,6 @@ def add_drug_mapping(mapdict):
 
         drugs.add_drug_mapping({"multi-vitamin":"vitamin"})
     """
-
     filename = resource_filename(Requirement.parse("drugstandards"), "drugstandards/data/synonyms.dat")
     drugdict = pickle.load(open(filename, "rb"))
     for k,v in mapdict.items():
