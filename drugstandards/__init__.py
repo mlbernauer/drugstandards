@@ -9,20 +9,18 @@ from pkg_resources import Requirement, resource_filename
 dictionary_file = resource_filename(Requirement.parse("drugstandards"), "drugstandards/data/synonyms.dat")
 drugdict = pickle.load(open(dictionary_file, "rb")) 
 
-def create_drug_dicitonary(filename):
+def create_drug_dictionary(filename):
     """ This function creates a drug dictionary of the form
         {"synonym1":"generic1", "synonym2":"generic1"} using
         drug names (brand, generic, synonyms) found in DrugBank.
     """ 
     f = csv.reader(open(filename, 'rb'), delimiter="\t")
-    drug_dictionary = {}
-  
+    drug_dictionary = {}  
     for i in f:
         if i[0] == "WID": continue
         drug_dictionary[i[2].upper()] = i[2].upper()
         if i[3] != "NULL": drug_dictionary[i[3].upper()] = i[2].upper()
-        if i[4] != "NULL": drug_dictionary[i[4].upper()] = i[2].upper()
-  
+        if i[4] != "NULL": drug_dictionary[i[4].upper()] = i[2].upper() 
     return drug_dictionary
   
 def find_closest_string(query, dictionary, thresh=0.90):
@@ -64,7 +62,7 @@ def standardize(druglist, thresh=0.90):
         to the generic names. It is used to provide naming
         consistency to the FAERS reports.
     """
-    splitter = re.compile("\\W+")
+    splitter = re.compile("\\W+|\d+")
     standardized_druglist = []
     for drug in druglist:
         drug = drug.upper()
