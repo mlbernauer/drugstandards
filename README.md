@@ -33,7 +33,7 @@ drugs.standardize(["Benadryl"])
 
 `drugs.standardize(["Benadril", "lopresor"])`
 
-#### 5. Return generic name for terms that have a Jario-Winkler similarity greater than 0.9
+#### 5. Return generic name for terms that have a Jaro-Winkler similarity greater than 0.9
 ```
 # Will return None if no match is found.
 
