@@ -52,6 +52,6 @@ drugs.add_drug_mapping({"MULTI-VITAMIN":"VITAMIN", "TYLENOL EXTRA STRENGTH": "AC
 ## Questions/issues/contact
 mlbernauer@gmail.com
 
-### Citing
+## Citing
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.571248.svg)](https://doi.org/10.5281/zenodo.571248)
 
