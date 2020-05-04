@@ -54,7 +54,7 @@ def add_drug_mapping(mapdict):
     for k,v in mapdict.items():
         drugdict[k] = v
     pickle.dump(drugdict, open(filename, "wb"))
-    print "Drug dictionary successfully updated..."
+    print("Drug dictionary successfully updated...")
   
 def standardize(druglist, thresh=0.90):
     """ This function takes a list of drugs (brand name,
