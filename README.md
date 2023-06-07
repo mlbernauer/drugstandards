@@ -3,60 +3,38 @@ This package provides tools for standardizing drug names into a single format.  
 
 ## Installation
 
-#### Installing drugstandards from source
-
-```
+```bash
 # install Levenshtein package
 sudo pip3 install Levenshtein==0.21.0
 
-# Download this github repository and enter the following
-# install drugstandards
+# download repo and enter the following
 cd drugstandards
 sudo python3 setup.py install
 ```
 
 ## Usage
 
-#### 1. Import the module
+```python
+# import module
+import drugstandards as ds
 
-`import drugstandards as ds`
-
-#### 2. Standardize a single, correctly spelled drug name to generic.
-
-```
 # create standardizer object
 s = ds.DrugStandardizer()
 
-# Note that this function is NOT case-sensitive.
+# map a brand name to generic (case insensitive) 
 s.standardize(["lopressor"])
-```
-
-#### 3. Standardize a single brand name to generic.
-
-```
 s.standardize(["Benadryl"])
-```
 
-#### 4. Standardize misspelled names to generic.
+# handles misspellings and multiple mappings
+s.standardize(["Benadril", "lopresor"])
 
-`s.standardize(["Benadril", "lopresor"])`
-
-#### 5. Return generic name for terms that have a Jaro-Winkler similarity greater than 0.9
-
-```
-# Will return None if no match is found.
-
+# can a adjust match threshold, will return None if not match found
 s.standardize(["Benadril"], thresh=0.9)
-```
 
-#### 6. Add drug mapping to drug dictionary
-
-```
-# If a mapping does not exist you may create your own by updating the drug-dictionary.
-# For example, we may be interested in mapping the term "MULTI-VITAMIN" to "VITAMIN"
+# add custom mappings, key is case insensitive but value letter case is preserved
 s.add_drug_mapping({"MULTI-VITAMIN":"VITAMIN"})
 
-# We can also create many updates simultaneously
+# add multiple mappings simultaneously 
 s.add_drug_mapping({"MULTI-VITAMIN":"VITAMIN", "TYLENOL EXTRA STRENGTH": "ACETAMINOPHEN"})
 ```
 ## Questions/issues/contact
@@ -65,4 +43,3 @@ mlbernauer@gmail.com
 
 ## Citing
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.571248.svg)](https://doi.org/10.5281/zenodo.571248)
-
