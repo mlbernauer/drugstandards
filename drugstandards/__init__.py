@@ -12,7 +12,7 @@ class DrugStandardizer():
         """ 
         self.drugdict= {}  
         with open(filename, 'r') as csvfile:
-            reader = csv.reader(filename, delimiter = delimiter)
+            reader = csv.reader(csvfile, delimiter = delimiter)
             for k,v in reader:
                 self.drugdict[k.upper()] = v
       
