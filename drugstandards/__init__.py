@@ -3,13 +3,8 @@ import operator
 import csv
 import os
 import re
-from pkg_resources import Requirement, resource_filename
 
 class DrugStandardizer():
-    def __init__(self):
-        self.dictionary_file = resource_filename(Requirement.parse("drugstandards"), "drugstandards/data/synonyms.dat")
-        self.drugdict = dict(i.strip().split("\t") for i in open(self.dictionary_file, "r"))
-
     def create_drug_dictionary(self, filename, delimiter = "\t"):
         """ This function creates a drug dictionary of the form
             {"synonym1":"generic1", "synonym2":"generic1"} using
