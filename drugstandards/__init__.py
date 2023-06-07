@@ -11,7 +11,7 @@ class DrugStandardizer():
             drug names (brand, generic, synonyms) found in DrugBank.
         """ 
         self.drugdict= {}  
-        with csv.reader(open(filename, 'r'), delimiter = delimter) as csvfile:
+        with csv.reader(open(filename, 'r'), delimiter = delimiter) as csvfile:
             for k, v in csvfile:
                 self.drugdict[k.upper()] = v
       
