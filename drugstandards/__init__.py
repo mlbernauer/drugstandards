@@ -12,8 +12,8 @@ class DrugStandardizer():
         """ 
         self.drugdict= {}  
         with csv.reader(open(filename, 'r'), delimiter = delimiter) as csvfile:
-            for k, v in csvfile:
-                self.drugdict[k.upper()] = v
+            for row in csvfile:
+                self.drugdict[row[0].upper()] = row[1]
       
     def find_closest_string(self, query, dictionary, thresh=0.90):
         """ This function returns the closest match for 
