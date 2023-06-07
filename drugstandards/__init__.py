@@ -11,9 +11,10 @@ class DrugStandardizer():
             drug names (brand, generic, synonyms) found in DrugBank.
         """ 
         self.drugdict= {}  
-        with csv.reader(open(filename, 'r'), delimiter = delimiter) as csvfile:
-            for row in csvfile:
-                self.drugdict[row[0].upper()] = row[1]
+        with open(filename, 'r') as csvfile:
+            reader = csv.reader(filename, delimiter = delimiter)
+            for k,v in reader:
+                self.drugdict[k.upper()] = v
       
     def find_closest_string(self, query, dictionary, thresh=0.90):
         """ This function returns the closest match for 
